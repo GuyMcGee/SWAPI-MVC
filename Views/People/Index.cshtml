@@ -1,5 +1,29 @@
+@model ResultsViewModel<PeopleViewModel>
+
 @{
     ViewData["Title"] = "People";
 }
 
 <h1>People Index</h1>
+
+@if (Model.Results?.Count() > 0)
+{
+    <div>
+        @foreach (var person in Model.Results)
+        {
+            <div>
+                <h4>@person.Name</h4>
+                <div>
+                    <p>Birth Year: @person.BirthYear</p>
+                    <p>Home World: @person.HomeWorld</p>
+                    <p>Height: @person.Height</p>
+                    <p>Mass: @person.Mass</p>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>There are absotootely no results for this page.</p>
+}
