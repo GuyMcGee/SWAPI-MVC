@@ -7,7 +7,7 @@ var app = builder.Build();
 
 builder.Services.AddHttpClient("swapi", client =>
     {
-        client.BaseAddress = new Uri("https://swapi.dev/api");
+        client.BaseAddress = new Uri("https://swapi.dev/api/");
     });
 
 builder.Services.AddControllersWithViews();
