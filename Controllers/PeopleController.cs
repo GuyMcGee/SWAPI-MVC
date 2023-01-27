@@ -8,9 +8,8 @@ namespace SwapiMVC.Controllers
     {
         private readonly HttpClient _httpClient;
         public PeopleController(IHttpClientFactory httpClientFactory)
-
         {
-            httpClientFactory.CreateClient("swapi");
+            _httpClient = httpClientFactory.CreateClient("swapi");
         }
 
         public async Task<IActionResult> Index(string page)
